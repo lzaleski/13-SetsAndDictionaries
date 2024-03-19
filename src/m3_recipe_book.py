@@ -1,5 +1,5 @@
 ###############################################################################
-# TODO: 1. (6 pts)
+# DONE: 1. (6 pts)
 #
 #   For this _TODO_, we are going to bring together many of the concepts that
 #   we have learned.
@@ -35,7 +35,28 @@
 #
 #   Once you have done this, then change the above _TODO_ to DONE.
 ###############################################################################
-
+recipes = []
+running = True
+more = True
+print("Welcome to Recipe Book!")
+while running == True:
+    dictionary = {}
+    recipe_name = input("Please enter a recipe name: ")
+    if recipe_name.lower() == "end":
+        break
+    else:
+        dictionary["name"] = recipe_name
+    setofingreds = set()
+    while more == True:
+        ingredient = input("Please enter an ingredient: ")
+        if ingredient == "end":
+            break
+        else:
+            setofingreds.add(ingredient)
+    dictionary["ingredients"] = setofingreds
+    recipes.append(dictionary)
+for x in recipes:
+    print(x)
 ###############################################################################
 # TODO: 2. EXTRA CREDIT (2 pts)
 #
